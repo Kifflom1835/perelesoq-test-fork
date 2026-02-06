@@ -5,12 +5,9 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 831533142025890265, guid: 246750ba87993bc448275a44e289674c, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1202604170031219955, guid: 246750ba87993bc448275a44e289674c, type: 3}
       propertyPath: m_Name
       value: Gate OR
@@ -59,53 +56,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 3178719343651610749, guid: 246750ba87993bc448275a44e289674c, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3955962889003308908, guid: 246750ba87993bc448275a44e289674c, type: 3}
-      propertyPath: m_Mesh
-      value: 
+    - target: {fileID: 3386247213280508309, guid: 246750ba87993bc448275a44e289674c, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3955962889003308908, guid: 246750ba87993bc448275a44e289674c, type: 3}
       propertyPath: m_VersionIndex
-      value: 1064
-      objectReference: {fileID: 0}
-    - target: {fileID: 4272459962988695973, guid: 246750ba87993bc448275a44e289674c, type: 3}
-      propertyPath: m_Mesh
-      value: 
+      value: 1088
       objectReference: {fileID: 0}
     - target: {fileID: 4272459962988695973, guid: 246750ba87993bc448275a44e289674c, type: 3}
       propertyPath: m_VersionIndex
-      value: 1079
-      objectReference: {fileID: 0}
-    - target: {fileID: 4713323999563153309, guid: 246750ba87993bc448275a44e289674c, type: 3}
-      propertyPath: m_Mesh
-      value: 
+      value: 1103
       objectReference: {fileID: 0}
     - target: {fileID: 4713323999563153309, guid: 246750ba87993bc448275a44e289674c, type: 3}
       propertyPath: m_VersionIndex
-      value: 1070
-      objectReference: {fileID: 0}
-    - target: {fileID: 5775998085414502764, guid: 246750ba87993bc448275a44e289674c, type: 3}
-      propertyPath: m_Mesh
-      value: 
+      value: 1094
       objectReference: {fileID: 0}
     - target: {fileID: 5775998085414502764, guid: 246750ba87993bc448275a44e289674c, type: 3}
       propertyPath: m_VersionIndex
-      value: 1067
+      value: 1091
       objectReference: {fileID: 0}
     - target: {fileID: 6051148041878126952, guid: 246750ba87993bc448275a44e289674c, type: 3}
       propertyPath: m_text
       value: OR
       objectReference: {fileID: 0}
-    - target: {fileID: 8708960200585796865, guid: 246750ba87993bc448275a44e289674c, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8803231352172094069, guid: 246750ba87993bc448275a44e289674c, type: 3}
-      propertyPath: m_Mesh
-      value: 
+    - target: {fileID: 6051148041878126952, guid: 246750ba87993bc448275a44e289674c, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 246750ba87993bc448275a44e289674c, type: 3}
