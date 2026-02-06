@@ -24,27 +24,36 @@ namespace SmartHome
         {
             base.ChangeConnection(value);
 
-            Light l = LightsDataset.Instance.GetLightByNumber(roomNumber);
-            if (l != null)
-            {
+            /* Light l = LightsDataset.Instance.GetLightByNumber(roomNumber);
+             if (l != null)
+             {
 
-                l.intensity = value ? 1 : 0;
-            }
+                 l.intensity = value ? 1 : 0;
+             }*/
+
+            ToggleLight();
+
+            //isOn = value;
         }
 
         public override void Toggle()
         {
-            if (!coonectedToNetwork) return;
+            isOn = !isOn;
 
+            //if (!coonectedToNetwork) return;
+
+            ToggleLight();
+        }
+
+        void ToggleLight()
+        {
             Light l = LightsDataset.Instance.GetLightByNumber(roomNumber);
 
             if (l != null)
             {
 
-                l.gameObject.SetActive(!l.gameObject.activeInHierarchy);
+                l.gameObject.SetActive(isOn);
             }
-
-            IsOn = l.gameObject.activeInHierarchy;
         }
     }
 }

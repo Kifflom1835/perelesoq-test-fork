@@ -29,6 +29,10 @@ public class PowerSource : MonoSingleton<PowerSource>
     public List<ElectricObject> GetGates => gates;
     public ElectricObject GetDoor => door;
 
+    public float TotalEnergyConsumed => totalEnergyConsumed; 
+    public float CurrentPowerDraw => currentPowerDraw;
+    public DateTime StartTime => startTime;
+
 
     [SerializeField]
     private bool isEnable = true;

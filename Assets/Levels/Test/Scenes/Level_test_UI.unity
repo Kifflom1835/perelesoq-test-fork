@@ -168,6 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7098a00589c0d48b217b4336fa72d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Phone.PhoneScreen
+  timeText: {fileID: 690523470}
+  currentPowerDrawText: {fileID: 1306791325}
+  totalEnergyConsumedText: {fileID: 130443525}
   blockSwitherPrefab: {fileID: 4535271289869548518, guid: 2bd7cbc29f1abfa499f4b61e26b4b0b2, type: 3}
   blockSwithers: []
   blockDoorPrefab: {fileID: 1488239678479582873, guid: f391bf2cd9b2b5a4b87539c73db9f849, type: 3}
@@ -177,6 +180,18 @@ MonoBehaviour:
   blockGatePrefab: {fileID: 5179025365627558215, guid: 77581754d3dbcf049bbbb9cb14afe641, type: 3}
   blockGates: []
   content: {fileID: 481993301}
+  isEnable: 1
+--- !u!114 &130443525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 880352342613903352, guid: 24d2af77278110548a205a74ddc9efc1, type: 3}
+  m_PrefabInstance: {fileID: 424473120}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &151881167 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4859924048728773174, guid: db3b5a5058a46724d9735bd2b0bb84e0, type: 3}
@@ -496,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 886.3366}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 886.3367}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &481993302
@@ -625,6 +640,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &690523470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 673949416318200303, guid: 24d2af77278110548a205a74ddc9efc1, type: 3}
+  m_PrefabInstance: {fileID: 6243737341232123899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &776432815
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +738,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 100, y: 100}
+--- !u!114 &1306791325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 673949416318200303, guid: 24d2af77278110548a205a74ddc9efc1, type: 3}
+  m_PrefabInstance: {fileID: 424473120}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1334784483
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,12 +1,19 @@
 ﻿using NUnit.Framework;
 using SmartHome;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 namespace Phone
 {
     public class PhoneScreen : MonoSingleton<PhoneScreen>
     {
+        [SerializeField] TMP_Text timeText;
+        [SerializeField] TMP_Text currentPowerDrawText; 
+        [SerializeField] TMP_Text totalEnergyConsumedText;
+
         [SerializeField] private BlockSwither blockSwitherPrefab;
         [SerializeField] private List<Block> blockSwithers = new List<Block>();
 
@@ -24,6 +31,8 @@ namespace Phone
 
         [SerializeField] private Transform content;
 
+        [SerializeField] bool isEnable = true;
+        WaitForSeconds wairForOneSecond = new WaitForSeconds(1);
 
         void Start()
         {
@@ -38,6 +47,19 @@ namespace Phone
             SpawnDoor();
             SpawnLamps();
             SpawnGates();
+
+            StartCoroutine(UpdateData());
+        }
+
+        IEnumerator UpdateData()
+        {
+            while (isEnable)
+            {
+                timeText.text = $"{(DateTime.Now - PowerSource.Instance.StartTime):hh\\:mm\\:ss}";
+                totalEnergyConsumedText.text = $"TOTAL: {PowerSource.Instance.TotalEnergyConsumed:F3} W·h";
+                currentPowerDrawText.text = $"CURRENT: {PowerSource.Instance.CurrentPowerDraw:F1} W";
+                yield return wairForOneSecond;
+            }
         }
 
         // Update is called once per frame
