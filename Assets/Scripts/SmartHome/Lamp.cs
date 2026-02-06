@@ -9,6 +9,18 @@ namespace SmartHome {
         [SerializeField]
         private List<GameObject> lights = new List<GameObject>();
 
+
+
+        public override void Start()
+        {
+            base.Start();
+
+        }
+        void Update()
+        {
+
+        }
+
         public override void Toggle()
         {
             base.Toggle();
@@ -42,18 +54,6 @@ namespace SmartHome {
             }
 
             isOn = lights[0].activeInHierarchy;
-
-        }
-
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
 
         }
     }

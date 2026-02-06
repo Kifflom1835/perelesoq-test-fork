@@ -25,9 +25,11 @@ namespace SmartHome
         private bool isOpen = false;
         private bool isAnimating = false;
 
+        public override int GetConsumption => consumption/5;
 
-        void Start()
+        public override void Start()
         {
+            base.Start();
             //TODO: восстановить сотояние из префов
         }
 
@@ -66,6 +68,7 @@ namespace SmartHome
         IEnumerator AnimateDoor()
         {
             isAnimating = true;
+            isOn = true;
 
             float startAngle = NormalizeAngle(pivot.transform.localEulerAngles.y);
             float endAngle;
@@ -101,6 +104,7 @@ namespace SmartHome
 
             isOpen = !isOpen;
             isAnimating = false;
+            isOn = false;
 
             ChangeDoorDriverState();
 

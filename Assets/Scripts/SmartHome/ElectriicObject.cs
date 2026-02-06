@@ -4,6 +4,7 @@ namespace SmartHome
     public class ElectriicObject : MonoBehaviour, IToggle
     {
         [Header("Settings")]
+        [SerializeField]
         protected int consumption;
         [SerializeField]
         protected bool coonectedToNetwork = false;
@@ -18,6 +19,7 @@ namespace SmartHome
         public bool CoonectedToNetwork => coonectedToNetwork;
 
         public bool ToggleBySwither => toggleBySwither;
+        public virtual int GetConsumption => consumption;
 
         public virtual void ChangeConnection(bool value)
         {
@@ -30,9 +32,10 @@ namespace SmartHome
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        public virtual void Start()
         {
-
+            if (consumption > 0)
+                PowerSource.Instance.RegisterDevice(this);
         }
 
         // Update is called once per frame

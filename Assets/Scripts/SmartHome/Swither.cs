@@ -36,12 +36,12 @@ namespace SmartHome
                     if (coonectedToNetwork)
                     {
                         toggle.ChangeConnection(isOn);
-
-                        if(toggle.ToggleBySwither)
-                                toggle.Toggle();
                     }
                     else
                         toggle.ChangeConnection(coonectedToNetwork);
+
+                    if (toggle.ToggleBySwither)
+                        toggle.Toggle();
                 }
             }
 

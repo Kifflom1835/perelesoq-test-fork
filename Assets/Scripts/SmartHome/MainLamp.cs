@@ -1,17 +1,26 @@
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
+
 namespace SmartHome
 {
-    public class MainLamp : Lamp
+    public class MainLamp : ElectriicObject
     {
-        [SerializeField]
-        bool isMainRoomLight = false;
         [SerializeField]
         int roomNumber = 1;
 
+
+
+        public override void Start()
+        {
+            base.Start();
+        }
+
+        void Update()
+        {
+
+        }
         public override void ChangeConnection(bool value)
         {
-           // GetComponent<ElectriicObject>().ChangeConnection(value);
+            base.ChangeConnection(value);
 
             Light l = LightsDataset.Instance.GetLightByNumber(roomNumber);
             if (l != null)
@@ -34,18 +43,6 @@ namespace SmartHome
             }
 
             isOn = l.gameObject.activeInHierarchy;
-        }
-
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }
