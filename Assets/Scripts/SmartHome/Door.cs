@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
 
 namespace SmartHome
 {
-    public class Door : ElectriicObject, IToggle
+    public class Door : ElectricObject, IToggle
     {
         [Header("Door Settings")]
         [SerializeField]
@@ -26,10 +27,15 @@ namespace SmartHome
         private bool isAnimating = false;
 
         public override int GetConsumption => consumption/5;
+        public bool IsOpen => isOpen;
+        public float RotationTime => rotationTime;
+
+        public Action OnIsOpenChanged;
 
         public override void Start()
         {
             base.Start();
+            PowerSource.Instance.RegisterDoor(this);
             //TODO: восстановить сотояние из префов
         }
 
@@ -43,8 +49,6 @@ namespace SmartHome
         public override void Toggle()
         {
             base.Toggle();
-
-            return;
 
             if (!coonectedToNetwork) return;
                 ToggleDoor();
@@ -68,7 +72,7 @@ namespace SmartHome
         IEnumerator AnimateDoor()
         {
             isAnimating = true;
-            isOn = true;
+            IsOn = true;
 
             float startAngle = NormalizeAngle(pivot.transform.localEulerAngles.y);
             float endAngle;
@@ -104,7 +108,7 @@ namespace SmartHome
 
             isOpen = !isOpen;
             isAnimating = false;
-            isOn = false;
+            IsOn = false;
 
             ChangeDoorDriverState();
 
@@ -121,6 +125,8 @@ namespace SmartHome
 
         private void ChangeDoorDriverState()
         {
+            if (OnIsOpenChanged !=null)
+                OnIsOpenChanged.Invoke();
 
             if (doorTextState == null) return;
 

@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 using System.Collections.Generic;
 
 namespace SmartHome {
-    public class RoomBridge : ElectriicObject
+    public class RoomBridge : ElectricObject
     {
         [SerializeField]
         Renderer indicator;

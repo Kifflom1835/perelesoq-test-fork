@@ -1,13 +1,15 @@
+using System;
 using UnityEngine;
 namespace SmartHome
 {
-    public class ElectriicObject : MonoBehaviour, IToggle
+    public class ElectricObject : MonoBehaviour, IToggle
     {
         [Header("Settings")]
         [SerializeField]
         protected int consumption;
         [SerializeField]
         protected bool coonectedToNetwork = false;
+        [SerializeField]
         protected string ObjName = string.Empty;
 
         [SerializeField]
@@ -15,15 +17,34 @@ namespace SmartHome
         [SerializeField]
         protected bool toggleBySwither = true;
 
-        public bool IsOn => isOn;
         public bool CoonectedToNetwork => coonectedToNetwork;
+        public bool IsOn { get { return isOn; } protected set { isOn = value; OnIsOnChanged?.Invoke(); } }
 
         public bool ToggleBySwither => toggleBySwither;
         public virtual int GetConsumption => consumption;
+        public string GetObjName => ObjName;
+
+        public Action OnConnectionToNetworkChanged;
+        public Action OnIsOnChanged;
+
+        public virtual void Start()
+        {
+            if (consumption > 0)
+                PowerSource.Instance.RegisterDevice(this);
+        }
+        void Update()
+        {
+
+        }
 
         public virtual void ChangeConnection(bool value)
         {
             coonectedToNetwork = value;
+
+            if (OnConnectionToNetworkChanged != null)
+            {
+                OnConnectionToNetworkChanged.Invoke();
+            }
         }
 
         public virtual void Toggle()
@@ -31,18 +52,6 @@ namespace SmartHome
             if (!coonectedToNetwork) return;
         }
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        public virtual void Start()
-        {
-            if (consumption > 0)
-                PowerSource.Instance.RegisterDevice(this);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 
 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SmartHome
 {
-    public class MainLamp : ElectriicObject
+    public class MainLamp : ElectricObject
     {
         [SerializeField]
         int roomNumber = 1;
@@ -12,6 +12,8 @@ namespace SmartHome
         public override void Start()
         {
             base.Start();
+
+            PowerSource.Instance.RegisterLamp(this);
         }
 
         void Update()
@@ -42,7 +44,7 @@ namespace SmartHome
                 l.gameObject.SetActive(!l.gameObject.activeInHierarchy);
             }
 
-            isOn = l.gameObject.activeInHierarchy;
+            IsOn = l.gameObject.activeInHierarchy;
         }
     }
 }

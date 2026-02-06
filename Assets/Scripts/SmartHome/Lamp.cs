@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
 namespace SmartHome {
-    public class Lamp : ElectriicObject, IToggle
+    public class Lamp : ElectricObject, IToggle
     {
         [SerializeField]
         private List<GameObject> lights = new List<GameObject>();
@@ -14,6 +14,8 @@ namespace SmartHome {
         public override void Start()
         {
             base.Start();
+
+            PowerSource.Instance.RegisterLamp(this);
 
         }
         void Update()
@@ -53,7 +55,7 @@ namespace SmartHome {
                 l.SetActive(!l.activeInHierarchy);
             }
 
-            isOn = lights[0].activeInHierarchy;
+            IsOn = lights[0].activeInHierarchy;
 
         }
     }

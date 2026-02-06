@@ -8,6 +8,8 @@ namespace SmartHome
         [SerializeField] private Transform[] cameraPoints = new Transform[3];
         [SerializeField] private int currentPointIndex = 0;
 
+        public int CurrentPointIndex => currentPointIndex;
+
         private Camera mainCamera;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()

@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace SmartHome
 {
-    public class Swither : ElectriicObject, IToggle
+    public class Swither : ElectricObject, IToggle
     {
         [SerializeField]
         List<GameObject> connectors = new List<GameObject>();
@@ -12,6 +13,16 @@ namespace SmartHome
         GameObject pivot;
         [SerializeField]
         Renderer indicator;
+
+        void Start()
+        {
+            PowerSource.Instance.RegisterSwither(this);
+        }
+
+        void Update()
+        {
+
+        }
 
         public override void Toggle()
         {
@@ -28,14 +39,14 @@ namespace SmartHome
         [ContextMenu("Toggle Swither")]
         void ToggleSwither()
         {
-            isOn = !isOn;
+            IsOn = !IsOn;
             foreach(GameObject connector in connectors)
             {
                 if(connector.TryGetComponent<IToggle>(out IToggle toggle))
                 {
                     if (coonectedToNetwork)
                     {
-                        toggle.ChangeConnection(isOn);
+                        toggle.ChangeConnection(IsOn);
                     }
                     else
                         toggle.ChangeConnection(coonectedToNetwork);
@@ -49,7 +60,7 @@ namespace SmartHome
         }
         void SwithToggleVisual()
         {
-            if (isOn)
+            if (IsOn)
             {
                 pivot.transform.localEulerAngles = new Vector3(0,0,-7);
             }
@@ -79,18 +90,6 @@ namespace SmartHome
             {
                 indicator.material = MaterialsDataset.Instance.isOffMaterial;
             }
-        }
-
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

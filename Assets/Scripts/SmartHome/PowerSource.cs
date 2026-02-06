@@ -13,7 +13,22 @@ public class PowerSource : MonoSingleton<PowerSource>
 
     [SerializeField] private TMPro.TMP_Text tmpDisplayText;
 
-    [SerializeField] private List<ElectriicObject> connectedDevices = new List<ElectriicObject>();
+    [SerializeField] private List<ElectricObject> connectedDevices = new List<ElectricObject>();
+
+
+    [Header("Sorted objects")]
+    [SerializeField] private List<ElectricObject> swithers = new List<ElectricObject>();
+    [SerializeField] private List<ElectricObject> lamps = new List<ElectricObject>();
+    [SerializeField] private ElectricObject door;
+    [SerializeField] private CameraSwitcher cameraSwitcher;
+    [SerializeField] private List<ElectricObject> gates = new List<ElectricObject>();
+
+
+    public List<ElectricObject> GetSwithers => swithers;
+    public List<ElectricObject> GetLamps => lamps;
+    public List<ElectricObject> GetGates => gates;
+    public ElectricObject GetDoor => door;
+
 
     [SerializeField]
     private bool isEnable = true;
@@ -32,10 +47,32 @@ public class PowerSource : MonoSingleton<PowerSource>
         
     }
 
-    public void RegisterDevice(ElectriicObject obj)
+    public void RegisterDevice(ElectricObject obj)
     {
         if(!connectedDevices.Contains(obj))
             connectedDevices.Add(obj);
+    }
+
+    public void RegisterSwither(ElectricObject obj)
+    {
+        if (!swithers.Contains(obj))
+            swithers.Add(obj);
+    }
+    public void RegisterDoor(ElectricObject obj)
+    {
+        door = (Door)obj;
+    }
+
+    public void RegisterLamp(ElectricObject obj)
+    {
+        if (!lamps.Contains(obj))
+            lamps.Add(obj);
+    }
+
+    public void RegisterGate(ElectricObject obj, bool isOR)
+    {
+        if (!gates.Contains(obj))
+            gates.Add(obj);
     }
 
     IEnumerator UpdateData()
@@ -56,7 +93,7 @@ public class PowerSource : MonoSingleton<PowerSource>
 
         for (int i = 0; i < connectedDevices.Count; i++)
         {
-            ElectriicObject device = connectedDevices[i];
+            ElectricObject device = connectedDevices[i];
 
             if (device.IsOn && device.CoonectedToNetwork)
             {
@@ -72,7 +109,7 @@ public class PowerSource : MonoSingleton<PowerSource>
 
         for (int i = 0; i < connectedDevices.Count; i++)
         {
-            ElectriicObject device = connectedDevices[i];
+            ElectricObject device = connectedDevices[i];
 
             if (device.IsOn && device.CoonectedToNetwork)
             {

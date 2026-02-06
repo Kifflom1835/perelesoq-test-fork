@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace SmartHome
 {
-    public class Gate : ElectriicObject
+    public class Gate : ElectricObject
     {
         [SerializeField]
-        protected List<ElectriicObject> inputs = new List<ElectriicObject>();
+        protected List<ElectricObject> inputs = new List<ElectricObject>();
         [SerializeField]
-        protected ElectriicObject output;
+        protected ElectricObject output;
 
 
         [SerializeField]
@@ -21,9 +21,10 @@ namespace SmartHome
         [SerializeField]
         bool isOR = true;
 
-        void Start()
+        public override void Start()
         {
-
+            base.Start();
+            PowerSource.Instance.RegisterGate(this, isOR);
         }
         void Update()
         {
@@ -71,19 +72,19 @@ namespace SmartHome
                     MaterialsDataset.Instance.isOffMaterial;
             }
 
-            if (isOn != state)
+            if (IsOn != state)
             {
                 output.Toggle();
             }
 
-            isOn = state;
+            IsOn = state;
 
-            outputRenderer.material = isOn ?
+            outputRenderer.material = IsOn ?
                 MaterialsDataset.Instance.isOnMaterial :
                  MaterialsDataset.Instance.isOffMaterial;
         }
 
-        bool CheckInput(ElectriicObject input)
+        bool CheckInput(ElectricObject input)
         {
             return input.IsOn && input.CoonectedToNetwork;
         }
