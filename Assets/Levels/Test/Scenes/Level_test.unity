@@ -499,6 +499,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 808765279}
     m_Modifications:
+    - target: {fileID: 6596406794795501, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 49719338148277794, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -508,8 +512,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1628639341}
     - target: {fileID: 998580706137994742, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 998580706137994742, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_VersionIndex
-      value: 4622
+      value: 4628
       objectReference: {fileID: 0}
     - target: {fileID: 1061481520728041507, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_RootOrder
@@ -555,6 +563,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2774957767367426767, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071933836484191595, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759430850911257487, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4259443286384427206, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -592,8 +612,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1141361652}
     - target: {fileID: 5104539738162663076, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104539738162663076, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_VersionIndex
-      value: 4628
+      value: 4634
       objectReference: {fileID: 0}
     - target: {fileID: 5488502559412146252, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_Name
@@ -965,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: ObjName
-      value: RoomB Switch 6
+      value: SwitchCeilLamp B
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: coonectedToNetwork
@@ -1889,7 +1913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: ObjName
-      value: RoomB Switch 5
+      value: Switch AND left
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: coonectedToNetwork
@@ -4158,6 +4182,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaterialsDataset
   isOnMaterial: {fileID: 2100000, guid: 8f06f88536682b94abaffa2764b52f9f, type: 2}
   isOffMaterial: {fileID: 2100000, guid: 0beffbed72a29764c911945ff80620af, type: 2}
+  CeilLampOn: {fileID: 2100000, guid: 559c96d2754c1774d952cc0f2979bbd0, type: 2}
+  CeilLampOff: {fileID: 2100000, guid: d8a62ab40d402914da72efdd0c273534, type: 2}
+  LampOn: {fileID: 2100000, guid: 38639eab3f81e5946b5827eb31cd12ca, type: 2}
+  LampOff: {fileID: 2100000, guid: 4971431646ab93f4ca56e0360db9590e, type: 2}
 --- !u!4 &566906022
 Transform:
   m_ObjectHideFlags: 0
@@ -4263,7 +4291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: ObjName
-      value: RoomA Switch 1
+      value: SwitchCeilLamp A
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: coonectedToNetwork
@@ -6558,7 +6586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: ObjName
-      value: RoomB Switch 4
+      value: Switch AND right
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: coonectedToNetwork
@@ -12019,7 +12047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: ObjName
-      value: RoomB Switch 3
+      value: ' Switch OR left'
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: coonectedToNetwork
@@ -12360,7 +12388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: ObjName
-      value: RoomB Switch 2
+      value: ' Switch OR right'
       objectReference: {fileID: 0}
     - target: {fileID: 7193819611420054488, guid: d2ee769f6be0f654ca45a2374b8389f0, type: 3}
       propertyPath: coonectedToNetwork
@@ -14198,7 +14226,7 @@ PrefabInstance:
       objectReference: {fileID: 1384678695}
     - target: {fileID: 998580706137994742, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_VersionIndex
-      value: 4619
+      value: 4625
       objectReference: {fileID: 0}
     - target: {fileID: 1061481520728041507, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_RootOrder
@@ -14294,7 +14322,7 @@ PrefabInstance:
       objectReference: {fileID: 1178618901}
     - target: {fileID: 5104539738162663076, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_VersionIndex
-      value: 4625
+      value: 4631
       objectReference: {fileID: 0}
     - target: {fileID: 5488502559412146252, guid: 030463e6a3620f743b4911b71f78bdf6, type: 3}
       propertyPath: m_Name

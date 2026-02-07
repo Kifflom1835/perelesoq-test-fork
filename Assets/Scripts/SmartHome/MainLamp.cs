@@ -7,13 +7,16 @@ namespace SmartHome
         [SerializeField]
         int roomNumber = 1;
 
-
+        [SerializeField]
+        Renderer lightMesh;
 
         public override void Start()
         {
             base.Start();
 
             PowerSource.Instance.RegisterLamp(this);
+
+            lightMesh = GetComponent<Renderer>();
         }
 
         void Update()
@@ -54,6 +57,11 @@ namespace SmartHome
 
                 l.gameObject.SetActive(isOn);
             }
+
+            if (isOn)
+                lightMesh.material = MaterialsDataset.Instance.CeilLampOn;
+            else
+                lightMesh.material = MaterialsDataset.Instance.CeilLampOff;
         }
     }
 }

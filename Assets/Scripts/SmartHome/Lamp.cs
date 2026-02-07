@@ -9,6 +9,9 @@ namespace SmartHome {
         [SerializeField]
         private List<GameObject> lights = new List<GameObject>();
 
+        [SerializeField]
+        Renderer lightMesh;
+
 
 
         public override void Start()
@@ -32,7 +35,7 @@ namespace SmartHome {
         {
             base.ChangeConnection(value);
 
-            if (lights.Count == 0) return;
+          /*  if (lights.Count == 0) return;
 
             foreach (GameObject l in lights)
             {
@@ -40,7 +43,7 @@ namespace SmartHome {
                 {
                     light.intensity = value ? 1 : 0;
                 }
-            }
+            }*/
 
         }
 
@@ -56,6 +59,11 @@ namespace SmartHome {
             }
 
             IsOn = lights[0].activeInHierarchy;
+
+            if(isOn)
+                lightMesh.material = MaterialsDataset.Instance.LampOn;
+            else
+                lightMesh.material = MaterialsDataset.Instance.LampOff;
 
         }
     }

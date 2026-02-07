@@ -1699,11 +1699,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9158cf8b697b9674fba668ca49d24914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartHome.Lamp
+  consumption: 0
   coonectedToNetwork: 0
+  ObjName: 
   isOn: 0
+  toggleBySwither: 1
   lights:
   - {fileID: 2774957767367426767}
   - {fileID: 3759430850911257487}
+  lightMesh: {fileID: 6596406794795501}
 --- !u!1 &9003575194112234733
 GameObject:
   m_ObjectHideFlags: 0
